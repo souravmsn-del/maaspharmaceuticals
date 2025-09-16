@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maas Pharmaceuticals — Kannur Distributor</title>
+  <meta name="description" content="Maas Pharmaceuticals — trusted distributor in Kannur. Professional contact & company information." />
+  <style>
+    :root{
+      --accent:#0ea5a3; /* teal-ish */
+      --accent-2:#ff7ab6; /* pink accent */
+      --bg:#f7fbfc;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.75);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg, #f0fbfb 0%, #f7f9fc 100%);color:#0f172a;}
+    header{position:relative}
+
+    /* Top bar */
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 20px;background:transparent}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:68px;height:68px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:rgba(12,18,28,0.85);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+    nav a:hover{background:rgba(15,23,42,0.06)}
+
+    /* Hero */
+    .hero{min-height:58vh;display:grid;grid-template-columns:1fr 420px;gap:24px;padding:36px 4%;align-items:center}
+    .hero-left{max-width:760px}
+    .eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;font-weight:700;font-size:13px}
+    h1{font-size:38px;margin:18px 0 8px;line-height:1.05}
+    p.lead{color:var(--muted);font-size:16px;margin:0 0 18px}
+    .cta-row{display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{background:transparent;border:2px solid rgba(15,23,42,0.06)}
+
+    .hero-right{position:relative;padding:18px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));box-shadow:0 6px 30px rgba(2,6,23,0.06);backdrop-filter: blur(6px)}
+    .contact-card h3{margin:0 0 6px}
+    .contact-list{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+    .contact-item{display:flex;gap:12px;align-items:center}
+    .contact-item b{font-size:14px}
+
+    /* Background image area (top) */
+    .hero-bg{position:absolute;inset:0;z-index:-1;background-image:url('header-bg.jpg');background-size:cover;background-position:center;filter:brightness(0.45);border-bottom-left-radius:18px;border-bottom-right-radius:18px}
+
+    main{padding:28px 4% 80px;max-width:1200px;margin:0 auto}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+    .card h4{margin:0 0 8px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .service{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(14,165,163,0.06), rgba(255,122,182,0.03));}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:10px}
+
+    /* Contact form */
+    form{display:grid;gap:10px}
+    input,textarea,select{padding:10px;border-radius:10px;border:1px solid #e6eef0;font-size:15px}
+    textarea{min-height:110px}
+    .form-row{display:flex;gap:10px}
+    .form-row .col{flex:1}
+
+    footer{padding:28px 4%;background:transparent;border-top:1px dashed rgba(2,6,23,0.03);margin-top:30px}
+    .footer-grid{display:flex;justify-content:space-between;gap:12px;align-items:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;min-height:62vh}
+      .hero-right{order:2}
+      .hero-bg{background-position:top}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .grid{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr}
+      nav{display:none}
+      .logo{width:56px;height:56px}
+      h1{font-size:28px}
+    }
+
+    /* small helper */
+    .small{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">MP</div>
+        <div>
+          <div style="font-weight:800">Maas Pharmaceuticals</div>
+          <div class="small">Kannur — Distributor</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div class="hero-left">
+        <span class="eyebrow">Trusted Distributor • Kannur</span>
+        <h1>Reliable pharmaceutical distribution — local service, professional delivery.</h1>
+        <p class="lead">Maas Pharmaceuticals — supplying medical stores, clinics and institutions across Kannur with timely, professional logistics and partner support. (This site intentionally does not list medicine product details.)</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Sales</button>
+          <button class="btn btn-outline" onclick="window.open('#','_blank')">Download Brochure</button>
+        </div>
+        <div style="margin-top:18px" class="small">Logo and header image spaces are placeholders — replace <code>header-bg.jpg</code> and the logo square with your assets.</div>
+      </div>
+
+      <aside class="hero-right contact-card" aria-labelledby="contact-card">
+        <h3 id="contact-card">Contact & Office</h3>
+        <div class="muted">Office hours: Mon — Sat, 9:00 AM — 6:30 PM</div>
+        <div class="contact-list">
+          <div class="contact-item"><div style="width:36px;height:36px;border-radius:8px;background:rgba(14,165,163,0.12);display:grid;place-items:center">📞</div><div><b>Phone</b><div class="small">+91-9895029674</div></div></div>
+          <div class="contact-item"><div style="width:36px;height:36px;border-radius:8px;background:rgba(255,122,182,0.08);display:grid;place-items:center">📍</div><div><b>Location</b><div class="small">Kannur, Kerala, India</div></div></div>
+          <div class="contact-item"><div style="width:36px;height:36px;border-radius:8px;background:rgba(2,6,23,0.06);display:grid;place-items:center">✉️</div><div><b>Email</b><div class="small"></div></div></div>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:10px">
+          <a class="small" href="#contact">Request callback</a>
+          <a class="small" href="#">Partner login</a>
+        </div>
+      </aside>
+    </section>
+  </header>
+
+  <main>
+    <section id="about" class="card" style="margin-bottom:18px">
+      <h4>About Maas Pharmaceuticals — Kannur</h4>
+      <p class="muted">We are a distribution partner focused on timely deliveries, transparent billing and partner support. This page intentionally avoids listing medicines or prescriptions — contact us for trade enquiries and account setup.</p>
+      <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+        <div class="card" style="flex:1;min-width:220px">Company registration<br><span class="small muted">GST / Trade License placeholders</span></div>
+        <div class="card" style="flex:1;min-width:220px">Warehousing & cold-chain<br><span class="small muted">Storage capabilities summary</span></div>
+        <div class="card" style="flex:1;min-width:220px">Delivery network<br><span class="small muted">Kannur district coverage</span></div>
+      </div>
+    </section>
+
+    <section id="services" style="margin-bottom:18px">
+      <h4>Services</h4>
+      <div class="services" style="margin-top:10px">
+        <div class="service">
+          <h5>Wholesale Distribution</h5>
+          <div class="small muted">B2B supply to pharmacies & clinics. Account credit & invoicing available.</div>
+        </div>
+        <div class="service">
+          <h5>Logistics & Delivery</h5>
+          <div class="small muted">Timely last-mile delivery with tracking and proof-of-delivery.</div>
+        </div>
+        <div class="service">
+          <h5>Cold-chain Handling</h5>
+          <div class="small muted">Temperature-controlled transport & storage for temperature-sensitive products.</div>
+        </div>
+        <div class="service">
+          <h5>Partner Support</h5>
+          <div class="small muted">Dedicated account managers and tech-enabled ordering options.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="card" style="margin-bottom:18px">
+      <h4>Gallery / Office</h4>
+      <div class="gallery" style="margin-top:10px">
+        <img src="office" alt="Office image 1"/>
+        <img src="" alt="Warehouse image"/>
+        <img src="team-1.jpg" alt="Team image"/>
+      </div>
+      <div class="small muted" style="margin-top:8px">img</div>
+    </section>
+
+    <section id="contact" class="card">
+      <h4>Contact / Request a callback</h4>
+      <form id="contactForm" onsubmit="return handleForm(event)">
+        <div class="form-row">
+          <div class="col"><input id="name" required placeholder="Your full name"/></div>
+          <div class="col"><input id="phone" required placeholder="Phone number"/></div>
+        </div>
+        <input id="company" placeholder="Company / Pharmacy (optional)" />
+        <textarea id="message" placeholder="Your message or enquiry (no prescription or medicine lists)" ></textarea>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button type="submit" class="btn btn-primary">Send enquiry</button>
+          <div id="formMsg" class="small muted"></div>
+        </div>
+      </form>
+    </section>
+
+    <section style="margin-top:18px">
+      <div class="grid">
+        <div class="card">
+          <h4>Our Values</h4>
+          <p class="muted">Integrity • Timeliness • Partner-first approach • Compliance</p>
+        </div>
+        <div class="card">
+          <h4>Quick Links</h4>
+          <ul class="small muted">
+            <li>Account setup</li>
+            <li>Payments & billing</li>
+            <li>Return policy</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>Location</h4>
+          <div class="small muted">Kannur, Kerala — exact address provided to verified partners.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <strong>Maas Pharmaceuticals</strong>
+        <div class="small muted">Kannur • Distributor</div>
+      </div>
+      <div class="small muted">© <span id="year"></span> Maas Pharmaceuticals — All rights reserved</div>
+    </div>
+  </footer>
+
+  <script>
+    // small JS: form handling, replace with real backend endpoint when ready
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const company = document.getElementById('company').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const msgEl = document.getElementById('formMsg');
+      if(!name || !phone){ msgEl.textContent = 'Please add name and phone.'; return false }
+      // rudimentary phone check
+      if(!/^\+?\d[\d\s\-]{6,}$/.test(phone)){ msgEl.textContent = 'Please enter a valid phone number.'; return false }
+
+      // simulate send
+      msgEl.textContent = 'Sending...';
+      setTimeout(()=>{
+        msgEl.textContent = 'Enquiry sent — we will call you shortly.';
+        document.getElementById('contactForm').reset();
+      },900);
+      return false;
+    }
+  </script>
+</body>
+</html>
