@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medicine Order Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #e6f7ff;
+      padding: 20px;
+    }
+
+    .container {
+      background: #ffffff;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0, 100, 200, 0.3);
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #0073e6;
+    }
+
+    label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #0073e6;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005bb5;
+    }
+
+    .success {
+      color: green;
+      font-weight: bold;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Medicine Order Form</h2>
+    <form id="medicineForm">
+      <label for="name">Full Name:</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" name="email" id="email" required>
+
+      <label for="medicine">Medicine Name:</label>
+      <input type="text" name="medicine" id="medicine" required>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" name="quantity" id="quantity" required>
+
+      <label for="address">Delivery Address:</label>
+      <textarea name="address" id="address" rows="3" required></textarea>
+
+      <button type="submit">Submit Order</button>
+      <div class="success" id="successMsg">Order submitted successfully!</div>
+    </form>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwS_QbEqL6aBjyDZSXeeB4DyjOtUP5VGhWO3163iRNK5lR1HyyrCBpOCveE5hr0xEXRlg/exec';
+    const form = document.getElementById('medicineForm');
+    const successMsg = document.getElementById('successMsg');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          successMsg.style.display = 'block';
+          form.reset();
+          setTimeout(() => successMsg.style.display = 'none', 5000);
+        })
+        .catch(error => alert('Error!', error.message));
+    });
+  </script>
+</body>
+</html>
